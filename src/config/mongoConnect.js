@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(toString(process.env.MONGO_CONNECT))
+const uri = toString(process.env.MONGO_CONNECT)
+
+mongoose.connect(uri)
 
 let db = mongoose.connection
 
