@@ -22,7 +22,7 @@ const sexRoutes = require('./routes/sexRoutes.js')
 
 const app = express()
 const json = express.json()
-const port = 5555 || process.env.PORTA
+const port = process.env.PORT || 5555
 
 /*  */
 
