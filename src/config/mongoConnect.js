@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_CONNECT)
+mongoose.connect(toString(process.env.MONGO_CONNECT))
 
 let db = mongoose.connection
 
