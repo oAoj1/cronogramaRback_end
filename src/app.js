@@ -69,7 +69,7 @@ app.get('/tempo/dia', (req,res) => {
         diaHoje = 'Sábado'
     }
 
-    return res.send(diaHoje)
+    res.send(diaHoje)
 
 })
 
@@ -79,7 +79,7 @@ app.get('/tempo/data', (req,res) => {
 
     let dataCompleta = `${dia}/${mes}`
 
-    return res.send(dataCompleta)
+    res.send(dataCompleta)
 
 })
 
