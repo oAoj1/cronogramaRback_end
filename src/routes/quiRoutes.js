@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const quiController = require('../controllers/quiController.js')
 
+router.post('/quinta/:id', quiController.concluirTarefa)
 router.delete('/quinta/anotacoes/:id', quiController.deletarQuinta)
 router.put('/quinta/anotacoes/:id', quiController.atualizarQuinta)
 router.post('/quinta', quiController.criarQuinta)
