@@ -5,6 +5,7 @@ const quaShcema = new mongoose.Schema({
     periodoDia:String,
     tipoTarefa:{type:String, required:true},
     nomeTarefa:{type:String, required:true},
+    concluido:Boolean
 })
 
 const quartas = mongoose.model('quartas', quaShcema)

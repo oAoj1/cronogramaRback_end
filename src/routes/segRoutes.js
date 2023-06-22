@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const segController = require('../controllers/segController.js')
 
+router.post('/segunda/:id', segController.concluirTarefa)
 router.delete('/segunda/anotacoes/:id', segController.deletarSegunda)
 router.put('/segunda/anotacoes/:id', segController.atualizarSegunda)
 router.post('/segunda', segController.criarSegunda)

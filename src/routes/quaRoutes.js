@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const quaController = require('../controllers/quaController.js')
 
+router.post('/sexta/:id', quaController.concluirTarefa)
 router.delete('/quarta/anotacoes/:id', quaController.deletarQuarta)
 router.put('/quarta/anotacoes/:id', quaController.atualizarQuarta)
 router.get('/quarta', quaController.lerQuarta)

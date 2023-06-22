@@ -97,6 +97,32 @@ async function filtrarTipoTarefa(req,res){
     }
 }
 
+async function concluirTarefa(req,res){
+    try{
+        const id = req.params.id
+        const concluirTarefa = await quintas.findOne({ _id: id })
+
+        
+        if(concluirTarefa.concluido){
+            concluirTarefa.concluido = false
+        }else{
+            concluirTarefa.concluido = true
+        }
+
+        await concluirTarefa.save()
+        .then(() => {
+            res.json(concluirTarefa)
+        })
+        .catch(err => {
+            console.log(err.message)
+        })
+
+    }catch(error){
+        console.log(error.message)
+    }
+
+}
+
 module.exports = {
     lerQuarta,
     criarQuarta,
@@ -105,4 +131,5 @@ module.exports = {
     lerQuartaID,
     filtrarPeriodoDia,
     filtrarTipoTarefa,
+    concluirTarefa
 }
