@@ -109,13 +109,12 @@ async function concluirTarefa(req,res){
         }
 
         await concluirTarefa.save()
-
-            .then(() => {
-                res.json(concluirTarefa)
-            })
-            .catch(err => {
-                res.send(err)
-            })
+        .then(() => {
+            res.json(concluirTarefa)
+        })
+        .catch(err => {
+            res.send(err)
+        })
 
     }catch(error){
         console.log(error.message)
