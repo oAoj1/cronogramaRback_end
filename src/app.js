@@ -37,5 +37,3 @@ db.on('error', () => console.log('Erro ao conectar com mongodb'))
 
 app.use(cors(),json,segRoutes,terRoutes,quaRoutes,quiRoutes,sexRoutes)
 app.listen(port, () => console.log(`Server ligado => http://localhost:${port}`))
-
-/*  */
