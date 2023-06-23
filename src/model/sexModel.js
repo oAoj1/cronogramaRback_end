@@ -5,7 +5,7 @@ const sexSchema = new mongoose.Schema({
     periodoDia:String,
     tipoTarefa:{type:String, required:true},
     nomeTarefa:{type:String, required:true},
-    concluido:{type:Boolean, required:true}
+    concluido:Boolean
 })
 
 const sextas = mongoose.model('sextas', sexSchema)
