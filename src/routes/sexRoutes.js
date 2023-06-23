@@ -3,7 +3,6 @@ const router = express.Router()
 const sexController = require('../controllers/sexController.js')
 
 router.post('/sexta/:id', sexController.concluirTarefa)
-router.post('/sextas/anotacoes/:id'. sexController.concluirTarefa)
 router.delete('/sexta/anotacoes/:id', sexController.deletarSexta)
 router.put('/sexta/anotacoes/:id', sexController.atualizarSexta)
 router.post('/sexta', sexController.criarSexta)
@@ -14,5 +13,6 @@ router.get('/sexta/anotacoes', sexController.filtrarTipoTarefa)
 router.put('/sexta/:id', sexController.atualizarSexta)
 router.get('/sexta/:id', sexController.lerSextaID)
 router.delete('/sexta/:id', sexController.deletarSexta)
+router.post('/sextas/anotacoes/:id'. sexController.concluirTarefa)
 
 module.exports = router
