@@ -100,7 +100,7 @@ async function filtrarTipoTarefa(req,res){
 async function concluirTarefa(req,res){
     try{
         const id = req.params.id
-        const concluirTarefa = await quintas.findOne({ _id: id })
+        const concluirTarefa = await quartas.findOne({ _id: id })
 
         
         if(concluirTarefa.concluido){

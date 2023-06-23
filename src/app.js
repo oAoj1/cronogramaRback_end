@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const cors = require('cors')
 const express = require('express')
+const bodyParser = require('body-parser')
 const db = require('./config/mongoConnect.js')
 
 /*  */
@@ -35,5 +36,5 @@ db.on('error', () => console.log('Erro ao conectar com mongodb'))
 
 /*  */ 
 
-app.use(cors(),json,segRoutes,terRoutes,quaRoutes,quiRoutes,sexRoutes)
+app.use(bodyParser.json(),cors(),json,segRoutes,terRoutes,quaRoutes,quiRoutes,sexRoutes)
 app.listen(port, () => console.log(`Server ligado => http://localhost:${port}`))

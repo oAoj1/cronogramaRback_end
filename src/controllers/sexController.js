@@ -100,9 +100,8 @@ async function filtrarTipoTarefa(req,res){
 async function concluirTarefa(req,res){
     try{
         const id = req.params.id
-        const concluirTarefa = await quintas.findOne({ _id: id })
+        const concluirTarefa = await sextas.findOne({ _id: id })
 
-        
         if(concluirTarefa.concluido){
             concluirTarefa.concluido = false
         }else{
@@ -110,6 +109,7 @@ async function concluirTarefa(req,res){
         }
 
         await concluirTarefa.save()
+        
         .then(() => {
             res.json(concluirTarefa)
         })

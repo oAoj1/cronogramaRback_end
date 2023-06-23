@@ -102,7 +102,6 @@ async function concluirTarefa(req,res){
         const id = req.params.id
         const concluirTarefa = await quintas.findOne({ _id: id })
 
-        
         if(concluirTarefa.concluido){
             concluirTarefa.concluido = false
         }else{
@@ -110,6 +109,7 @@ async function concluirTarefa(req,res){
         }
 
         await concluirTarefa.save()
+
         .then(() => {
             res.json(concluirTarefa)
         })
