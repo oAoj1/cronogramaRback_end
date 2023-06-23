@@ -39,13 +39,3 @@ app.use(cors(),json,segRoutes,terRoutes,quaRoutes,quiRoutes,sexRoutes)
 app.listen(port, () => console.log(`Server ligado => http://localhost:${port}`))
 
 /*  */
-
-/*  */
-
-var data = new Date()
-
-app.get('/senha', (req,res) => {
-    const senhaSistema = process.env.PASSWORD
-    console.log(senhaSistema)
-    res.send(senhaSistema)
-})
