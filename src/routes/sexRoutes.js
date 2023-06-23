@@ -12,6 +12,5 @@ router.get('/sexta/anotacoes', sexController.filtrarTipoTarefa)
 router.put('/sexta/:id', sexController.atualizarSexta)
 router.get('/sexta/:id', sexController.lerSextaID)
 router.delete('/sexta/:id', sexController.deletarSexta)
-router.post('/sexta/:id', sexController.concluirTarefa)
 
 module.exports = router

@@ -97,31 +97,6 @@ async function filtrarTipoTarefa(req,res){
     }
 }
 
-async function concluirTarefa(req,res){
-    try{
-        const id = req.params.id
-        const concluirTarefa = await sextas.findOne({ _id: id })
-
-        if(concluirTarefa){
-            concluirTarefa.periodoDia = 'manha'
-        }else{
-            concluirTarefa.periodoDia = 'tarde'
-        }
-
-        await concluirTarefa.save()
-
-        .then(() => {
-            res.json(concluirTarefa)
-        })
-        .catch(err => {
-            console.log(err.message)
-        })
-
-    }catch(error){
-        console.log(error.message)
-    }
-
-}
 
 module.exports = {
     lerSexta,
@@ -130,6 +105,5 @@ module.exports = {
     deletarSexta,
     lerSextaID,
     filtrarPeriodoDia,
-    filtrarTipoTarefa,
-    concluirTarefa
+    filtrarTipoTarefa
 }
