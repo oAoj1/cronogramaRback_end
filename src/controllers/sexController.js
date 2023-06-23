@@ -103,9 +103,9 @@ async function concluirTarefa(req,res){
         const concluirTarefa = await sextas.findOne({ _id: id })
 
         if(concluirTarefa){
-            concluirTarefa.concluido = false
+            concluirTarefa.periodoDia = 'manha'
         }else{
-            concluirTarefa.concluido = true
+            concluirTarefa.periodoDia = 'tarde'
         }
 
         await concluirTarefa.save()
