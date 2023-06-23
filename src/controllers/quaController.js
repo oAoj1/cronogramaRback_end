@@ -101,7 +101,6 @@ async function concluirTarefa(req,res){
     try{
         const id = req.params.id
         const concluirTarefa = await quartas.findOne({ _id: id })
-
         
         if(concluirTarefa.concluido){
             concluirTarefa.concluido = false
@@ -110,12 +109,12 @@ async function concluirTarefa(req,res){
         }
 
         await concluirTarefa.save()
-        .then(() => {
-            res.json(concluirTarefa)
-        })
-        .catch(err => {
-            console.log(err.message)
-        })
+            .then(() => {
+                res.json(concluirTarefa)
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
 
     }catch(error){
         console.log(error.message)

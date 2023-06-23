@@ -101,12 +101,11 @@ async function concluirTarefa(req,res){
     try{
         const id = req.params.id
         const concluirTarefa = await sextas.findOne({_id:id})
-        const concluir = concluirTarefa.concluido
 
-        if(concluir){
-            concluir =  false
+        if(concluirTarefa.concluido){
+            concluirTarefa.concluido =  false
         }else{
-            concluir =  true
+            concluirTarefa.concluido =  true
         }
 
         await concluirTarefa.save()
