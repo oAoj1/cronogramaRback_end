@@ -108,4 +108,5 @@ app.get('/tempo/periodoagora', (req,res) => {
 app.get('/senha', (req,res) => {
     const senhaSistema = process.env.PASSWORD
     console.log(senhaSistema)
+    res.send(senhaSistema)
 })
